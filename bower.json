@@ -1,0 +1,31 @@
+{
+  "name": "jsets",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zswang/jsets",
+  "authors": "zswang",
+  "description": "Define Getter and Setter",
+  "main": "jsets.js",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "getter",
+    "setter"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "seajs": "2.3.0",
+    "requirejs": "2.1.15"
+  },
+  "ignore": [
+    "tests",
+    "src",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ]
+}
