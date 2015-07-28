@@ -1,18 +1,25 @@
-/*<remove>*/
-'use strict';
-/*</remove>*/
-
-/**
- * @file jsets
- * @author 王集鹄(wangjihu,http://weibo.com/zswang)
- * @version 2015-07-23
- */
-
 (function (exportName) {
+  /*<remove>*/
+  'use strict';
+  /*</remove>*/
+
+  /*<replace encoding="template" engine="ejs" data="../package.json">*/
+  /**
+   * @file <%- name %>
+   *
+   * <%- description %>
+   * @author
+       <% (author instanceof Array ? author : [author]).forEach(function (item) { %>
+   *   <%- item.name %> (<%- item.url %>)
+       <% }); %>
+   * @version <%- version %>
+   */
+  /*</replace>*/
+
   /* global exports */
   var exports = exports || {};
 
-  /*<function name="createGetter">*/
+  /*<function name="createGetter" dependencies="camelCase">*/
   /**
    * 创建读取键值的方法
    *
@@ -104,10 +111,10 @@
     };
     return method;
   }
-  exports.createGetter = createGetter;
   /*</function>*/
+  exports.createGetter = createGetter;
 
-  /*<function name="createSetter">*/
+  /*<function name="createSetter" dependencies="camelCase">*/
   /**
    * 创建设置键值的方法
    *
@@ -157,9 +164,8 @@
       return target;
     };
   }
-
-  exports.createSetter = createSetter;
   /*</function>*/
+  exports.createSetter = createSetter;
 
   /*<function name="camelCase">*/
   /**
@@ -189,8 +195,8 @@
     camelCache[text] = result;
     return result;
   }
-  exports.camelCase = camelCase;
   /*</function>*/
+  exports.camelCase = camelCase;
 
   /* global define,module,window */
   /* exported exports */

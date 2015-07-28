@@ -1,9 +1,12 @@
 {
   "name": "jsets",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Define Getter and Setter",
   "homepage": "https://github.com/zswang/jsets",
-  "author": "zswang",
+  "author": {
+    "name": "zswang",
+    "url": "http://weibo.com/zswang"
+  },
   "repository": "https://github.com/zswang/jsets.git",
   "license": "MIT",
   "main": "src/jsets.js",

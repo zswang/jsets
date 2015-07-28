@@ -1,12 +1,15 @@
-
-/**
- * @file jsets
- * @author 王集鹄(wangjihu,http://weibo.com/zswang)
- * @version 2015-07-23
- */
 (function (exportName) {
+  /**
+   * @file jsets
+   *
+   * Define Getter and Setter
+   * @author
+   *   zswang (http://weibo.com/zswang)
+   * @version 0.0.3
+   */
+  /* global exports */
   var exports = exports || {};
-  /*<function name="createGetter">*/
+  /*<function name="createGetter" dependencies="camelCase">*/
   /**
    * 创建读取键值的方法
    *
@@ -88,10 +91,10 @@
       }
     };
     return method;
-  };
-  exports.createGetter = createGetter;
+  }
   /*</function>*/
-  /*<function name="createSetter">*/
+  exports.createGetter = createGetter;
+  /*<function name="createSetter" dependencies="camelCase">*/
   /**
    * 创建设置键值的方法
    *
@@ -115,7 +118,7 @@
       assert(JSON.stringify(dict) === JSON.stringify({a: 1, b: 2, c: 3}));
       ```
    */
-  var createSetter = function (target, setter, camel) {
+  function createSetter(target, setter, camel) {
     return function (name, value) {
       if (typeof name === 'string' || typeof name === 'number') {
         setter(camel ? camelCase(name) : name, value);
@@ -134,9 +137,9 @@
       }
       return target;
     };
-  };
-  exports.createSetter = createSetter;
+  }
   /*</function>*/
+  exports.createSetter = createSetter;
   /*<function name="camelCase">*/
   /**
    * 将目标字符串进行驼峰化处理
@@ -146,7 +149,7 @@
    * @return {string} 驼峰化处理后的字符串
    */
   var camelCache = {}; // 缓存
-  var camelCase = function (text) {
+  function camelCase(text) {
     if (!text || typeof text !== 'string') { // 非字符串直接返回
       return text;
     }
@@ -164,9 +167,11 @@
     }
     camelCache[text] = result;
     return result;
-  };
-  exports.camelCase = camelCase;
+  }
   /*</function>*/
+  exports.camelCase = camelCase;
+  /* global define,module,window */
+  /* exported exports */
   if (typeof define === 'function') {
     if (define.amd || define.cmd) {
       define(function() {

@@ -1,8 +1,11 @@
 {
   "name": "jsets",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "homepage": "https://github.com/zswang/jsets",
-  "authors": "zswang",
+  "author": {
+    "name": "zswang",
+    "url": "http://weibo.com/zswang"
+  },
   "description": "Define Getter and Setter",
   "main": "jsets.js",
   "moduleType": [
