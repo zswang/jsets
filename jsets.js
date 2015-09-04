@@ -5,7 +5,8 @@
    * Define Getter and Setter
    * @author
    *   zswang (http://weibo.com/zswang)
-   * @version 0.0.3
+   * @version 0.0.4
+   * @date 2015-09-04
    */
   /* global exports */
   var exports = exports || {};
@@ -173,7 +174,7 @@
   /* global define,module,window */
   /* exported exports */
   if (typeof define === 'function') {
-    if (define.amd || define.cmd) {
+    if (define.amd) {
       define(function() {
         return exports;
       });

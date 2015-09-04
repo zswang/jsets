@@ -1,6 +1,6 @@
 {
   "name": "jsets",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Define Getter and Setter",
   "homepage": "https://github.com/zswang/jsets",
   "author": {
@@ -9,9 +9,9 @@
   },
   "repository": "https://github.com/zswang/jsets.git",
   "license": "MIT",
-  "main": "src/jsets.js",
+  "main": "jsets.js",
   "files": [
-    "src/jsets.js"
+    "jsets.js"
   ],
   "keywords": [
     "getter",
@@ -20,14 +20,15 @@
   "dependencies": {},
   "devDependencies": {
     "mocha": "2.0.1",
+    "istanbul": "0.3.17",
     "should": "4.1.0",
     "uglify-js": "2.4.15",
-    "jdists": "0.7.7",
+    "jdists": "1.0.8",
     "jshint": "2.5.8"
   },
   "scripts": {
-    "test": "mocha -R spec",
-    "dist": "jdists src/jsets.js -o jsets.js -r safe && uglifyjs jsets.js -o jsets.min.js -p 5 -c -m",
+    "test": "istanbul cover --hook-run-in-context node_modules/mocha/bin/_mocha -- -R spec",
+    "dist": "jdists src/jsets.js -o jsets.js -r remove,safe && uglifyjs jsets.js -o jsets.min.js -p 5 -c -m",
     "lint": "jshint src/*.js"
   }
 }

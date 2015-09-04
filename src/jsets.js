@@ -3,7 +3,7 @@
   'use strict';
   /*</remove>*/
 
-  /*<replace encoding="template" engine="ejs" data="../package.json">*/
+  /*<jdists encoding="ejs" data="../package.json">*/
   /**
    * @file <%- name %>
    *
@@ -13,8 +13,14 @@
    *   <%- item.name %> (<%- item.url %>)
        <% }); %>
    * @version <%- version %>
+       <% var now = new Date() %>
+   * @date <%- [
+        now.getFullYear(),
+        now.getMonth() + 101,
+        now.getDate() + 100
+      ].join('-').replace(/-1/g, '-') %>
    */
-  /*</replace>*/
+  /*</jdists>*/
 
   /* global exports */
   var exports = exports || {};
@@ -201,7 +207,7 @@
   /* global define,module,window */
   /* exported exports */
   if (typeof define === 'function') {
-    if (define.amd || define.cmd) {
+    if (define.amd) {
       define(function() {
         return exports;
       });
