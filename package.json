@@ -1,6 +1,6 @@
 {
   "name": "jsets",
-  "version": "0.0.5",
+  "version": "1.0.1",
   "description": "Define Getter and Setter",
   "homepage": "https://github.com/zswang/jsets",
   "author": {
@@ -9,31 +9,39 @@
   },
   "repository": "https://github.com/zswang/jsets.git",
   "license": "MIT",
-  "main": "jsets.js",
-  "files": [
-    "jsets.js"
-  ],
+  "main": "lib/jsets",
+  "typings": "lib/jsets.d.ts",
   "keywords": [
     "getter",
     "setter"
   ],
   "dependencies": {},
   "devDependencies": {
-    "mocha": "2.0.1",
-    "istanbul": "0.3.17",
-    "should": "4.1.0",
-    "uglify-js": "2.4.15",
-    "jdists": "1.0.8",
-    "jshint": "2.5.8"
+    "@types/node": "^8.0.33",
+    "gulp": "^3.9.1",
+    "gulp-examplejs": "0.0.9",
+    "gulp-jdists": "^2.0.17",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-typescript": "^3.1.6",
+    "gulp-uglify": "^2.1.2",
+    "istanbul": "^0.3.17",
+    "merge2": "^1.1.0",
+    "mocha": "^2.0.1",
+    "should": "^4.1.0",
+    "typescript": "^2.0.3",
+    "jstrs": "^1.1.3"
   },
   "scripts": {
-    "_update_version": "jdists version.jdists",
-    "_dist": "jdists src/jsets.js -o jsets.js -r debug,test,remove,safe",
-    "_compress": "uglifyjs jsets.js -o jsets.min.js -p 5 -c -m",
-    "example": "jdists example.jdists.js -o test/example.js",
+    "_update_version": "node version.js",
+    "_dist": "gulp dist",
     "test": "istanbul cover --hook-run-in-context node_modules/mocha/bin/_mocha -- -R spec",
-    "mocha": "jdists example.jdists.js -o test/example.js && mocha",
-    "dist": "npm run _update_version && npm run example && npm run _dist && npm run _compress && npm run test",
-    "lint": "jshint src/*.js *.json"
-  }
+    "example": "gulp example",
+    "mocha": "mocha",
+    "dist": "npm run _update_version && npm run example && npm run _dist && npm run test"
+  },
+  "files": [
+    "lib",
+    "data"
+  ]
 }

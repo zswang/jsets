@@ -35,6 +35,7 @@ bower_components
 # test
 assets
 coverage
+debug.*
 
 # release
 release
