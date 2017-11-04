@@ -1,9 +1,11 @@
+'use strict'
+
 const assert = require('should')
 const jsets = require('../.')
 
 describe('camelCase: false', function () {
-  var data = {}
-  var instance = {}
+  let data = {}
+  let instance = {}
   instance.set = jsets.createSetter(instance, function (name, value) {
     data[name] = value
   })
@@ -36,7 +38,7 @@ describe('camelCase: false', function () {
     assert.equal(instance.get('a'), data['a'])
   })
   it("instance.get(['a', 'b'])", function () {
-    var r = instance.get(['a', 'b'])
+    let r = instance.get(['a', 'b'])
     assert.equal(r['a'], data['a'])
     assert.equal(r['b'], data['b'])
   })
@@ -64,7 +66,7 @@ describe('camelCase: false', function () {
   })
 
   it("instance.get({a: 2, e: 6})", function () {
-    var r = instance.get({ a: 2, z: 26 })
+    let r = instance.get({ a: 2, z: 26 })
     assert.equal(r['a'], 1)
     assert.equal(r['z'], 26) // default
   })
@@ -104,8 +106,8 @@ describe('camelCase: false', function () {
 })
 
 describe('camelCase: true', function () {
-  var data = {}
-  var instance = {}
+  let data = {}
+  let instance = {}
   instance.set = jsets.createSetter(instance, function (name, value) {
     data[name] = value
   }, true)
@@ -139,7 +141,7 @@ describe('camelCase: true', function () {
     assert.equal(instance.get('a'), data['a'])
   })
   it("instance.get(['a', 'b'])", function () {
-    var r = instance.get(['a', 'b'])
+    let r = instance.get(['a', 'b'])
     assert.equal(r['a'], data['a'])
     assert.equal(r['b'], data['b'])
   })
@@ -167,7 +169,7 @@ describe('camelCase: true', function () {
   })
 
   it("instance.get({a: 2, e: 6})", function () {
-    var r = instance.get({ a: 2, z: 26 })
+    let r = instance.get({ a: 2, z: 26 })
     assert.equal(r['a'], 1)
     assert.equal(r['z'], 26) // default
   })
