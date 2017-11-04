@@ -43,5 +43,5 @@ MIT © [zswang](http://weibo.com/zswang)
 [npm-image]: https://badge.fury.io/js/jsets.svg
 [travis-url]: https://travis-ci.org/zswang/jsets
 [travis-image]: https://travis-ci.org/zswang/jsets.svg?branch=master
-[coverage-url]: https://coveralls.io/github/zswang/isets?branch=master
-[coverage-image]: https://coveralls.io/repos/zswang/isets/badge.svg?branch=master&service=github
+[coverage-url]: https://coveralls.io/github/zswang/jsets?branch=master
+[coverage-image]: https://coveralls.io/repos/zswang/jsets/badge.svg?branch=master&service=github
