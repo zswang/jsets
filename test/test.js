@@ -1,3 +1,5 @@
+'use strict'
+
 const assert = require('should')
 const jsets = require('../.')
 
